@@ -1,0 +1,96 @@
+<!-- pagoConfirmado.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pago Confirmado</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Asegúrate de enlazar la misma hoja de estilos que en el pago.html -->
+  <link rel="shortcut icon" href="images/Logo turismo.PNG" type="image/x-icon">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 60px;
+    text-align: end;
+  }
+  
+  nav {
+    display: flex; /* Usa flexbox para alinear elementos en la barra de navegación */
+    align-items: center; /* Centra verticalmente los elementos en la barra de navegación */
+  }
+  
+  .logo {
+    width: 80px; /* Ajusta el ancho según tus necesidades */
+    height: 40px;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding-left: 788px;
+
+  }
+
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .confirmation-message {
+      text-align: center;
+      padding: 50px;
+      background-image: url('./images/Confirmación.webp');
+      background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 150px;
+    padding-bottom: 169px;
+    }
+
+    .confirmation-message h3{
+      color: black;
+      font-size: 50px;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html"><img src="./images/Logo turismo.PNG" alt="Logo de tu sitio" class="logo"></a>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="actividades.html">Actividades</a></li>
+        <li><a href="testimonios.html">Testimonios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="confirmation-message">
+    <h3>¡Pago confirmado!</h3>
+    <p>Gracias por realizar tu pago. La reserva ha sido confirmada.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Turismo en Tequendama</p>
+  </footer>
+</body>
+</html>

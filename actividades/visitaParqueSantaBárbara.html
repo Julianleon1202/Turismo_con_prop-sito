@@ -1,0 +1,299 @@
+<!-- senderismo.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Senderismo</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" href="../images/Logo turismo.PNG" type="image/x-icon">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 60px;
+    text-align: end;
+  }
+  
+  nav {
+    display: flex; /* Usa flexbox para alinear elementos en la barra de navegación */
+    align-items: center; /* Centra verticalmente los elementos en la barra de navegación */
+  }
+  
+  .logo {
+    width: 80px; /* Ajusta el ancho según tus necesidades */
+    height: 40px;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding-left: 788px;
+
+  }
+
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .main-content {
+      padding: 20px;
+    }
+
+    .main-content h2 {
+      text-align: center;
+    }
+
+    .actividad-detalle {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  margin: 0; /* Agregado para asegurarse de que no haya margen no deseado */
+}
+
+    .actividad-detalle img {
+      padding-top: 32px;
+      width: 100%;
+      height: 500px;
+      max-width: 550px; /* Ajusta el ancho máximo según tus preferencias */
+      margin-right: 120px;
+      margin-left: 150px;
+    }
+
+    .detalle-info {
+      width: 50%;
+    }
+
+    .calificacion {
+      margin-bottom: 2px;
+      margin-top: 5px; /* Ajuste del margen superior */
+    }
+
+    .calificacion p {
+        margin-bottom: 0; /* Agregado para quitar el espacio en blanco */
+    }
+
+    .comentarios {
+      margin-bottom: 20px;
+    }
+
+    .estrella {
+      cursor: pointer;
+      font-size: 24px;
+      color: #ddd;
+      transition: color 0.3s;
+    }
+
+    .estrella:hover,
+    .estrella.active {
+      color: #fdd835; /* Color cuando se pasa el ratón o está activa (puedes ajustar esto) */
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    /* Estilos para los botones */
+    button {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+    
+    .comentario {
+  border: 2px solid #a19c9c;
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.comentario-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.comentario p {
+  margin: 5px 0;
+}
+
+.comentario-autor {
+  font-weight: bold;
+}
+
+.comentario-calificacion {
+  color: #fdd835; /* Color de la calificación */
+}
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="../index.html"><img src="../images/Logo turismo.PNG" alt="Logo de tu sitio" class="logo"></a>
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../actividades.html">Actividades</a></li>
+        <li><a href="../testimonios.html">Testimonios</a></li>
+        <li><a href="../contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="main-content">
+    <div class="actividad-detalle">
+      <img src="../images/Parque Santa Bárbara.jpg" alt="Parque Santa Bárbara">
+      <div class="detalle-info">
+        <h2>Visita al parque Santa Bárbara</h2>
+        <p>Precio: $35,000 COP</p>
+        <p>Municipio: Tena</p>
+
+        <!-- Resumen de la actividad -->
+        <h3>Resumen:</h3>
+        <p>El parque Santa Bárbara en Tena ofrece una gran variedad de flora y fauna en un entorno natural impresionante. Los visitantes pueden disfrutar de senderos pintorescos y la compañía de guías expertos que les brindarán información sobre la flora y fauna del parque.</p>
+
+        <a href="../reservas/reservaParqueSantaBárbara.html"><button>Reserva ahora</button></a>
+        <!-- Sistema de calificación (estrellas) -->
+        <div class="calificacion" id="calificacion-container">
+          <p>Calificación:</p>
+          <!-- JavaScript se encargará de mostrar las estrellas -->
+        </div>
+
+        <!-- Caja de comentarios -->
+        <div class="comentarios">
+          <p>Comentarios:</p>
+          <textarea id="comentario" rows="4" cols="50"></textarea>
+          <button onclick="enviarComentario()">Enviar</button>
+        </div>
+
+        <!-- Sección de comentarios -->
+        <div id="seccion-comentarios">
+          <!-- Los comentarios se agregarán aquí dinámicamente -->
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Turismo en Tequendama</p>
+  </footer>
+  <script src="script.js"></script>
+  <script>
+    function enviarComentario() {
+  var comentario = document.getElementById("comentario").value;
+  var calificacion = obtenerCalificacionSeleccionada(); // Asume que hay una función para obtener la calificación
+
+  // Validación básica
+  if (!comentario) {
+    alert("Por favor, ingresa un comentario antes de enviar.");
+    return;
+  }
+
+  // Crear un nuevo comentario
+  var nuevoComentario = document.createElement("div");
+  nuevoComentario.className = "comentario";
+
+  // Crear la información del comentario
+  var contenidoComentario = document.createElement("div");
+  contenidoComentario.className = "comentario-info";
+
+  // Calificación (segunda fila)
+  var calificacionInfo = document.createElement("p");
+  calificacionInfo.className = "comentario-calificacion";
+  calificacionInfo.textContent = obtenerSimbolosEstrella(calificacion);
+  contenidoComentario.appendChild(calificacionInfo);
+
+  // Autor del comentario (primera fila)
+  var autor = document.createElement("p");
+  autor.className = "comentario-autor";
+  autor.textContent = "Anónimo";
+  contenidoComentario.appendChild(autor);
+
+  // Contenido del comentario (tercera fila)
+  var textoComentario = document.createElement("p");
+  textoComentario.className = "comentario-texto";
+  textoComentario.textContent = comentario;
+  contenidoComentario.appendChild(textoComentario);
+
+  // Agregar la información del comentario al contenedor
+  nuevoComentario.appendChild(contenidoComentario);
+
+  // Agregar el nuevo comentario al contenedor de comentarios
+  var seccionComentarios = document.getElementById("seccion-comentarios");
+  seccionComentarios.appendChild(nuevoComentario);
+
+  // Limpia el área de comentarios después de enviar
+  document.getElementById("comentario").value = "";
+}
+
+function obtenerSimbolosEstrella(cantidad) {
+  var simbolos = "";
+  for (var i = 0; i < cantidad; i++) {
+    simbolos += "★";
+  }
+  return simbolos;
+}
+
+    function obtenerCalificacionSeleccionada() {
+      // Lógica para obtener la calificación seleccionada (puedes implementarla según tus necesidades)
+      var estrellas = document.querySelectorAll(".estrella.active");
+      return estrellas.length;
+    }
+
+    function manejarCalificacion(calificacion) {
+      // Reinicia todas las estrellas
+      var estrellas = document.querySelectorAll(".estrella");
+      estrellas.forEach(function (estrella) {
+        estrella.classList.remove("active");
+      });
+
+      // Activa las estrellas hasta la calificación seleccionada
+      for (var i = 1; i <= calificacion; i++) {
+        estrellas[i - 1].classList.add("active");
+      }
+
+      // Aquí puedes agregar lógica para manejar la calificación, como enviarla al servidor
+      console.log("Calificación seleccionada:", calificacion);
+    }
+
+    function mostrarEstrellas() {
+      var calificacionContainer = document.getElementById("calificacion-container");
+      // Crea las 5 estrellas y asocia la función manejarCalificacion a su evento de clic
+      for (var i = 1; i <= 5; i++) {
+        var estrella = document.createElement("span");
+        estrella.className = "estrella";
+        estrella.innerHTML = "★"; // Puedes usar un ícono de estrella aquí si lo prefieres
+        estrella.setAttribute("data-calificacion", i);
+        estrella.onclick = function () {
+          manejarCalificacion(this.getAttribute("data-calificacion"));
+        };
+        calificacionContainer.appendChild(estrella);
+      }
+    }
+
+    // Llamada a la función para mostrar las estrellas
+    mostrarEstrellas();
+  </script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimonios</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" href="images/Logo turismo.PNG" type="image/x-icon">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 60px;
+    text-align: end;
+  }
+  
+  nav {
+    display: flex; /* Usa flexbox para alinear elementos en la barra de navegación */
+    align-items: center; /* Centra verticalmente los elementos en la barra de navegación */
+  }
+  
+  .logo {
+    width: 80px; /* Ajusta el ancho según tus necesidades */
+    height: 40px;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding-left: 788px;
+
+  }
+
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .main-content {
+      padding: 20px;
+    }
+
+    .testimonio {
+      display: flex;
+      margin-bottom: 20px;
+      border: 1px solid #ddd; /* Agregado borde a cada testimonio */
+    }
+
+    .testimonio-impar {
+      flex-direction: row; /* Cambiado de row-reverse a row */
+      margin-left: auto; /* Movido al fondo a la derecha */
+      text-align: right; /* Alineado el texto a la derecha */
+      padding-right: 20px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+
+    .testimonio-par {
+      flex-direction: row-reverse; /* Mantenido en row-reverse */
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+
+    .testimonio-par img {
+      width: 250px;
+      height: 200px;
+      margin-left: 20px; /* Cambiado de margin-right a margin-left */
+      margin-right: 5px;
+      border: 3px solid #333;
+    
+    }
+
+    .testimonio-impar img {
+      width: 250px;
+      height: 200px;
+      margin-left: 20px; /* Cambiado de margin-right a margin-left */
+      margin-right: 5px;
+      border: 3px solid #333;
+    
+    }
+
+    .contenido {
+      flex: 1;
+    }
+
+    .nombre {
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html"><img src="./images/Logo turismo.PNG" alt="Logo de tu sitio" class="logo"></a>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="actividades.html">Actividades</a></li>
+        <li><a href="testimonios.html">Testimonios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <section class="main-content">
+
+    <div class="testimonio testimonio-impar">
+      <div class="foto">
+        <img src="./images/mujer.jpg" alt="Testimonio 1">
+      </div>
+      <div class="contenido">
+        <p class="nombre">Isabel Martínez</p>
+        <p>Edad: 28 años</p>
+        <p>Testimonio: Como joven de esta comunidad, veo el turismo como una puerta a nuevas posibilidades. Queremos mostrar al mundo la riqueza de nuestras tradiciones y la calidez de nuestra gente. Esta iniciativa no solo nos da la oportunidad de crecer económicamente, sino de construir un futuro más prometedor.</p>
+      </div>
+    </div>
+    
+    <div class="testimonio testimonio-par">
+      <div class="foto">
+        <img src="./images/hombre.jpg" alt="Testimonio 2">
+      </div>
+      <div class="contenido">
+        <p class="nombre">Juan Carlos Ramírez</p>
+        <p>Edad: 48 años</p>
+        <p>Testimonio: La violencia nos arrebató mucho, pero estamos decididos a construir un futuro mejor. Este proyecto de turismo no solo es una oportunidad para mejorar la economía, sino también para mostrar la fortaleza y la resiliencia de nuestra comunidad. Juntos, podemos cambiar la narrativa de nuestra historia.</p>
+      </div>
+    </div>
+
+    <div class="testimonio testimonio-impar">
+      <div class="foto">
+        <img src="./images/mujer.jpg" alt="Testimonio 3">
+      </div>
+      <div class="contenido">
+        <p class="nombre">Ana María Rodríguez</p>
+        <p>Edad: 35 años</p>
+        <p>Testimonio: Crecí viendo la lucha de mi familia por mantener nuestras tierras. Ahora, la idea de atraer visitantes a través del turismo nos llena de esperanza. Es más que generar ingresos, es compartir nuestra cultura, nuestras tradiciones y demostrar que, a pesar de todo, estamos aquí para prosperar.</p>
+      </div>
+    </div>
+
+    <div class="testimonio testimonio-par">
+      <div class="foto">
+        <img src="./images/hombre.jpg" alt="Testimonio 4">
+      </div>
+      <div class="contenido">
+        <p class="nombre">Carlos González</p>
+        <p>Edad: 48 años</p>
+        <p>Testimonio: Esta tierra ha sido testigo de muchas historias, algunas dolorosas, pero hoy estamos decididos a cambiar el rumbo. El turismo rural no solo nos brinda la oportunidad de mejorar económicamente, sino de preservar nuestra identidad y ofrecer a los visitantes una experiencia auténtica y enriquecedora.</p>
+      </div>
+    </div>
+    
+    <div class="testimonio testimonio-impar">
+      <div class="foto">
+        <img src="./images/mujer.jpg" alt="Testimonio 5">
+      </div>
+      <div class="contenido">
+        <p class="nombre">Laura Gómez</p>
+        <p>Edad: 40 años</p>
+        <p>Testimonio: Como mujer, he sido testigo de la fuerza y la resistencia de nuestra comunidad. La iniciativa de promover el turismo no solo nos da la oportunidad de generar ingresos, sino que también destaca el papel fundamental de las mujeres en la reconstrucción de nuestras vidas y tierras. Este proyecto no solo es una oportunidad económica, sino un espacio para mostrar al mundo la valentía de las mujeres tequendameñas.</p>
+      </div>
+    </div>
+
+
+    <!-- Puedes agregar más testimonios según sea necesario -->
+
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Turismo en Tequendama</p>
+  </footer>
+</body>
+</html>

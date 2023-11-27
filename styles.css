@@ -1,0 +1,158 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 60px;
+    text-align: end;
+  }
+  
+  nav {
+    display: flex; /* Usa flexbox para alinear elementos en la barra de navegación */
+    align-items: center; /* Centra verticalmente los elementos en la barra de navegación */
+  }
+  
+  .logo {
+    width: 80px; /* Ajusta el ancho según tus necesidades */
+    height: 40px;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding-left: 788px;
+
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .main-content {
+    padding: 20px;
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .hero-section {
+  position: relative;
+  background-color: #fff; /* Fondo blanco */
+  overflow: hidden;
+  height: 300px; /* Ajusta según sea necesario */
+}
+
+.shape-left,
+.shape-right {
+    position: absolute;
+    height: 100%;
+    width: 58%; /* Ajusta este valor para reducir el espacio entre las imágenes */
+}
+
+.shape-left {
+    left: 0;
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 50% 50%, 100% 0);
+    background: url("./images/Tequendama1.jpeg") center/cover;
+    color: white;
+    padding-left: 15px;
+}
+
+.shape-right {
+    right: 0;
+    clip-path: polygon(100% 0, 50% 0%, 0 50%, 50% 100%, 100% 100%, 100% 0);
+    background: url("./images/Tequendama.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+  
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  text-align: center;
+}
+
+.municipios-section {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .municipio {
+    margin-top: 20px;
+    display: inline-block;
+    width: 30%; /* Ajusta según sea necesario para asegurar que haya espacio suficiente */
+    box-sizing: border-box;
+    padding: 3px
+  }
+  
+  .municipio img {
+    width: 100%;
+    height: 150px; /* Establece la altura deseada */
+    object-fit: cover; /* Ajusta para cubrir el contenedor manteniendo la proporción */
+    border: 2px solid #333;
+  }
+
+  .municipio a {
+    color: black;
+    text-decoration: underline;
+  }
+
+
+  .fila-actividades {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .actividad {
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+  }
+  
+  .actividad-contenido {
+    border: 1px solid #ddd; /* Añade un borde alrededor del cuadro de la actividad */
+    padding: 10px;
+    text-align: center; /* Centra el contenido del cuadro */
+  }
+  
+  .actividad img {
+    width: 100%;
+    height: 200px; /* Establece la altura deseada para todas las imágenes */
+    object-fit: cover; /* Hace que todas las imágenes tengan el mismo tamaño */
+  }
+  
+  .actividad h3 {
+    margin-top: 10px;
+    text-decoration: underline;
+  }
+  
+  .actividad p {
+    margin: 5px 0;
+  }
+
+  .main-content h2 {
+    text-align: center;
+
+  }
+
+  .actividad a {
+    color: black;
+    text-decoration: underline;
+  }

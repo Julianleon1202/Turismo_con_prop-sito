@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserva de senderismo</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" href="../images/Logo turismo.PNG" type="image/x-icon">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 60px;
+    text-align: end;
+  }
+  
+  nav {
+    display: flex; /* Usa flexbox para alinear elementos en la barra de navegación */
+    align-items: center; /* Centra verticalmente los elementos en la barra de navegación */
+  }
+  
+  .logo {
+    width: 80px; /* Ajusta el ancho según tus necesidades */
+    height: 40px;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding-left: 788px;
+
+  }
+
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .main-content {
+      padding: 20px;
+      background-image: url('../images/Ruta\ en\ bicicleta.jpg'); /* Reemplaza 'tu-imagen-de-fondo.jpg' con la ruta de tu imagen */
+      background-size: cover;
+      background-position: contain;
+    }
+
+    .reserva-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: rgba(51, 51, 51, 0.8); /* Fondo semi-transparente */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      padding-bottom: 15px;
+    }
+
+    .reserva-form h2{
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    h2, h3 { 
+      color: white;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #fff;
+      color: #333;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #cec1c1;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="../index.html"><img src="../images/Logo turismo.PNG" alt="Logo de tu sitio" class="logo"></a>
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../actividades.html">Actividades</a></li>
+        <li><a href="../testimonios.html">Testimonios</a></li>
+        <li><a href="../contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="main-content">
+    <div class="reserva-form">
+      <h2>Reserva ruta en bicicleta en San Antonio de Tequendama</h2>
+      <h3 id="precio">Desde $40,000 COP</h3>
+      <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="fecha">Fecha de reserva:</label>
+        <input type="date" id="fecha" name="fecha" required>
+
+        <label for="hora">Hora de reserva:</label>
+        <input type="time" id="hora" name="hora" required onchange="validarHora()">
+
+        <label for="personas">Número de personas:</label>
+        <select id="personas" name="personas" onchange="calcularPrecio()">
+          <option value="1">1 persona</option>
+          <option value="2">2 personas</option>
+          <option value="3">3 personas</option>
+          <option value="4">4 personas</option>
+          <option value="5">5 personas</option>
+          <option value="6">6 personas</option>
+          <!-- Puedes agregar más opciones según sea necesario -->
+        </select>
+
+        <label for="comentarios">Comentarios adicionales:</label>
+        <textarea id="comentarios" name="comentarios" rows="4" cols="79"></textarea>
+        <br>
+        <br>
+        <button type="button" onclick="confirmarReserva()">Confirmar reserva</button>
+        
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Turismo en Tequendama</p>
+  </footer>
+
+  <script>
+    function confirmarReserva() {
+      // Obtener los datos del formulario
+      var nombre = document.getElementById('nombre').value;
+      var email = document.getElementById('email').value;
+      var fecha = document.getElementById('fecha').value;
+      var personas = document.getElementById('personas').value;
+      var comentarios = document.getElementById('comentarios').value;
+
+      // Validar que los campos requeridos estén completos
+      if (!nombre || !email || !fecha) {
+        alert('Por favor, complete todos los campos requeridos.');
+        return;
+      }
+
+      // Validar el formato del correo electrónico
+      if (!validateEmail(email)) {
+        alert('Por favor, ingrese un correo electrónico válido.');
+        return;
+      }
+
+      if (!validarHora()) {
+        alert('La hora seleccionada no está disponible. Por favor, elija un horario entre las 6 am y las 4 pm.');
+        return;
+      }
+
+      // Puedes hacer algo con los datos aquí, como enviarlos al servidor si es necesario
+
+      // Redirigir a la página de pagos
+      window.location.href = "../pagos/pagos.html";
+    }
+
+    function validateEmail(email) {
+      var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return regex.test(email);
+    }
+
+    function validarHora() {
+      var horaSeleccionada = document.getElementById('hora').value;
+      var horaMinima = "06:00";
+      var horaMaxima = "16:00";
+
+      if (horaSeleccionada < horaMinima || horaSeleccionada > horaMaxima) {
+        return false;
+      }
+
+      return true;
+    }
+
+    function calcularPrecio() {
+      var precioBase = 40000; // Precio base para una persona
+      var personas = document.getElementById('personas').value;
+      var precioTotal = precioBase * personas;
+      document.getElementById('precio').innerText = 'Desde $ ' + precioTotal + ' COP';
+    }
+  </script>
+</body>
+</html>
